@@ -87,7 +87,7 @@ public class tab1 extends Fragment {
                             anime.setImage_url_teacher(jsonObject.getString("profile_pic"));
                            // lstAnime = new ArrayList<teacher_list>();
                             lstAnime.add(anime);
-
+                            Toast.makeText(getActivity(), "work", Toast.LENGTH_SHORT).show();
                         }
                         setuprecyclerview(lstAnime);
                     }
