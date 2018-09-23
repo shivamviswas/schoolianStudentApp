@@ -164,9 +164,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 mData.get(position).setRating(String.valueOf(anime5.getSetStar()));
                 setStars(mData.get(position).getIdd(),anime5.getSetStar(),status,Sid);
 
-
-
-
                 }
                 else {
              //   Toast.makeText(mContext, "work + "+get, Toast.LENGTH_SHORT).show();
