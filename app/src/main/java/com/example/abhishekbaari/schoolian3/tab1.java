@@ -46,7 +46,7 @@ public class tab1 extends Fragment {
     private List<teacher_list> lstAnime ;
     private RecyclerView recyclerView ;
       SessionManger sessionManger;
-    String sclid;
+    String sclid,clls;
     View view;
    // Context
 
@@ -55,8 +55,10 @@ public class tab1 extends Fragment {
         sessionManger=new SessionManger(getActivity());
         HashMap<String, String> user=sessionManger.getUserDetail();
         String Esid = user.get(sessionManger.SCL_ID);
+        String cls = user.get(sessionManger.CLAS);
         sclid=Esid;
-        shocoments(sclid);
+        clls=cls;
+        shocoments(sclid,clls);
         view=inflater.inflate(R.layout.tab1,container,false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerviewTeacher);
         lstAnime = new ArrayList<>();
@@ -65,7 +67,7 @@ public class tab1 extends Fragment {
 
     }
 
-    private void shocoments(final String posId) {
+    private void shocoments(final String posId,final String cls) {
         StringRequest stringRequest= new StringRequest(Request.Method.POST, JSON_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -87,7 +89,6 @@ public class tab1 extends Fragment {
                             anime.setImage_url_teacher(jsonObject.getString("profile_pic"));
                            // lstAnime = new ArrayList<teacher_list>();
                             lstAnime.add(anime);
-                            Toast.makeText(getActivity(), "work", Toast.LENGTH_SHORT).show();
                         }
                         setuprecyclerview(lstAnime);
                     }
@@ -116,6 +117,7 @@ public class tab1 extends Fragment {
 
                 Map<String, String> param = new HashMap<>();
                 param.put("school_id",posId);
+                param.put("cls",cls);
 
                 return param;
 

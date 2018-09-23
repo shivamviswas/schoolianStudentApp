@@ -100,29 +100,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 //            viewHolder.star.setImageResource(android.R.drawable.btn_star_big_off);
 //        }
 
-        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent i = new Intent(mContext, AnimeActivity.class);
-                i.putExtra("name",mData.get(viewHolder.getAdapterPosition()).getName());
-               // i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
-                i.putExtra("proPic",mData.get(viewHolder.getAdapterPosition()).getStudio());
-                i.putExtra("posts",mData.get(viewHolder.getAdapterPosition()).getCategorie());
-               i.putExtra("posId",mData.get(viewHolder.getAdapterPosition()).getIdd());
-                i.putExtra("star",mData.get(viewHolder.getAdapterPosition()).getRating());
-                i.putExtra("sid",mData.get(viewHolder.getAdapterPosition()).getSId());
-                i.putExtra("postPic",mData.get(viewHolder.getAdapterPosition()).getImage_url());
-
-                mContext.startActivity(i);
-
-            }
-        });
-
-
-
-
         return viewHolder;
 
 
@@ -181,7 +158,45 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
         });
 
+        holder.answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+                Intent i = new Intent(mContext, AnimeActivity.class);
+                i.putExtra("name",mData.get(position).getName());
+                // i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
+                i.putExtra("proPic",mData.get(position).getStudio());
+                i.putExtra("posts",mData.get(position).getCategorie());
+                i.putExtra("posId",mData.get(position).getIdd());
+                i.putExtra("star",mData.get(position).getRating());
+                i.putExtra("sid",mData.get(position).getSId());
+                i.putExtra("postPic",mData.get(position).getImage_url());
+
+                mContext.startActivity(i);
+
+            }
+        });
+
+        holder.view_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent i = new Intent(mContext, AnimeActivity.class);
+                i.putExtra("name",mData.get(position).getName());
+                // i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
+                i.putExtra("proPic",mData.get(position).getStudio());
+                i.putExtra("posts",mData.get(position).getCategorie());
+                i.putExtra("posId",mData.get(position).getIdd());
+                i.putExtra("star",mData.get(position).getRating());
+                i.putExtra("sid",mData.get(position).getSId());
+                i.putExtra("postPic",mData.get(position).getImage_url());
+
+                mContext.startActivity(i);
+
+            }
+        });
 
     }
 
@@ -200,7 +215,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView tv_category;
         ImageView img_thumbnail,star,staron;
         CircleImageView tv_pro1;
-        LinearLayout view_container;
+        LinearLayout view_container,answer;
         LinearLayout getStar;
 
 
@@ -210,7 +225,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            view_container = itemView.findViewById(R.id.container);
+            view_container = itemView.findViewById(R.id.containeritem);
+            answer = itemView.findViewById(R.id.answers);
             getStar=itemView.findViewById(R.id.setStar5);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_time = itemView.findViewById(R.id.timestamp);

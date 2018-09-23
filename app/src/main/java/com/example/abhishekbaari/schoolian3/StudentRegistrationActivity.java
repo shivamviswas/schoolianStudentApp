@@ -266,14 +266,8 @@ public class StudentRegistrationActivity extends AppCompatActivity implements Ad
 
 
     public void onItemSelected(AdapterView<?> parent, View arg1, int position, long id) {
-        if(items[position].length()!=0){
 
-            //Toast.makeText(getApplicationContext(), items[position], Toast.LENGTH_LONG).show();
-           // getPosition(items[position]);
-            selectedClassId = parent.getItemAtPosition(position).toString();
-
-            }
-
+        selectedClassId = parent.getItemAtPosition(position).toString();
 
     }
 

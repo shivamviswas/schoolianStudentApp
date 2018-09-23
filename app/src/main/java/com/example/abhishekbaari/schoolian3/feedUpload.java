@@ -137,11 +137,9 @@ public class feedUpload extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Uploading...");
-        progressDialog.setProgressStyle(progressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
-        progressDialog.setMax(100);
-        progressDialog.setProgress(0);
         progressDialog.show();
+        feedUpload.this.setFinishOnTouchOutside(false);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uplod,
                 new Response.Listener<String>() {
@@ -198,7 +196,9 @@ public class feedUpload extends AppCompatActivity {
         final String BLANK="";
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Uploading...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
+        feedUpload.this.setFinishOnTouchOutside(false);
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uplod,
@@ -323,7 +323,7 @@ public class feedUpload extends AppCompatActivity {
 
             if (requestCode == 1) {
                 Bundle extras = data.getExtras();
-               bitmap = (Bitmap) extras.get("data");
+               thumbnail = (Bitmap) extras.get("data");
                 //mImageView.setImageBitmap(imageBitmap);
 
 
@@ -356,7 +356,7 @@ public class feedUpload extends AppCompatActivity {
                     viewImage.setVisibility(View.VISIBLE);
                     imageSelect.setVisibility(View.GONE);
                     imageButton.setVisibility(View.VISIBLE);
-                         viewImage.setImageBitmap(bitmap);
+                         viewImage.setImageBitmap(thumbnail);
                         i=1;
 //
 //
@@ -448,7 +448,9 @@ public class feedUpload extends AppCompatActivity {
         final String BLANK="";
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Uploading...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
+        feedUpload.this.setFinishOnTouchOutside(false);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, uplod,
                 new Response.Listener<String>() {
