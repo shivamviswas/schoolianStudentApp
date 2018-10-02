@@ -255,8 +255,9 @@ public class HomeMenuActivity extends AppCompatActivity
 
             }
         };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+//        RequestQueue requestQueue = Volley.newRequestQueue(this);
+//        requestQueue.add(stringRequest);
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
 
     }
 
