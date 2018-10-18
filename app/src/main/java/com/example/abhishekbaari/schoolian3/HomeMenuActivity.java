@@ -3,6 +3,7 @@ package com.example.abhishekbaari.schoolian3;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,7 +23,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -85,7 +88,7 @@ public class HomeMenuActivity extends AppCompatActivity
         sessionManger = new SessionManger(this);
         sessionManger.checkLogin();
 
-
+        changImagetest();
 //        linearLayout = findViewById(R.id.top);
 //        linearLayout.setEnabled(false);
 
@@ -126,6 +129,17 @@ public class HomeMenuActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View view=navigationView.getHeaderView(0);
+        ImageView img=view.findViewById(R.id.imageViewScl);
+        TextView txt=view.findViewById(R.id.scl_head);
+        img.setImageResource(R.drawable.nav_menu_header_bg);
+        txt.setText("Schoolian");
+
+
+
+
+
 
 //        postBtn=findViewById(R.id.postbtn);
 //        editPost=findViewById(R.id.stpost);
@@ -359,6 +373,7 @@ public class HomeMenuActivity extends AppCompatActivity
         return true;
     }
 
+
     // method for bottom navigation view
     private void setUpBottomNavigationView() {
         bottomNavigationView = findViewById(R.id.bottomnavigationview);
@@ -402,4 +417,10 @@ public class HomeMenuActivity extends AppCompatActivity
         }, 2000);
     }
 
+    void changImagetest(){
+        LayoutInflater li=LayoutInflater.from(HomeMenuActivity.this);
+        View layout = li.inflate(R.layout.nav_header_home_menu,null,false);
+        ImageView imageView=layout.findViewById(R.id.imageViewScl);
+        imageView.setImageResource(R.drawable.man);
+    }
 }
