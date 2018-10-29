@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubjectActivity_2">
+    tools:context=".MainActivties.SubjectActivity_2">
 
     <!--top navigation view-->
 

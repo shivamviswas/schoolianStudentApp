@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.abhishekbaari.schoolian3">
+    package="com.wikav.student.studentapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -29,69 +29,71 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Spash_Screen"
+            android:name="com.wikav.student.studentapp.Spash_Screen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    android:launchMode="singleInstance"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login"
+            android:name="com.wikav.student.studentapp.MainActivties.Login"
             android:noHistory="true" />
         <activity
-            android:name=".SubjectActivity_2"
+            android:name="com.wikav.student.studentapp.MainActivties.SubjectActivity_2"
+            />
+        <activity
+            android:name="com.wikav.student.studentapp.activities.AnimeActivity"
             android:noHistory="true" />
         <activity
-            android:name=".activities.AnimeActivity"
-            android:noHistory="true" />
-        <activity
-            android:name=".StudentRegistrationActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.StudentRegistrationActivity"
             android:label="Register"
             android:noHistory="true"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".HomeMenuActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.HomeMenuActivity"
             android:label="@string/title_activity_home_menu"
-            android:noHistory="true"
+
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".Message_NevActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.Message_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".ContactUs_NevActivity"
+            android:name="com.wikav.student.studentapp.ContactUs_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".MyPost_NevActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.MyPost_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".Feedback_NevActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.Feedback_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".Schoolina_NevActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.Schoolina_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".Help_NevActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.Help_NevActivity"
             android:noHistory="true" />
         <activity
-            android:name=".NotificationActivity"
+            android:name="com.wikav.student.studentapp.MainActivties.NotificationActivity"
             android:noHistory="true" />
         <activity
-            android:name=".NewProfile"
-            android:noHistory="false" />
+            android:name="com.wikav.student.studentapp.MainActivties.NewProfile"
+             />
         <activity
-            android:name=".feedUpload"
-            android:noHistory="false" />
-        <activity
-            android:name=".EditProfile"
+            android:name="com.wikav.student.studentapp.MainActivties.feedUpload"
             android:noHistory="true" />
         <activity
-            android:name=".Confirm_password_Activity"
+            android:name="com.wikav.student.studentapp.EditProfile"
             android:noHistory="true" />
-        <activity android:name=".ForgotPasword" />
-        <activity android:name=".submitOtp"></activity>
+        <activity
+            android:name="com.wikav.student.studentapp.Confirm_password_Activity"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.wikav.student.studentapp.MainActivties.ForgotPasword" android:launchMode="singleTop" />
+        <activity android:name="com.wikav.student.studentapp.submitOtp"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

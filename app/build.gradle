@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.abhishekbaari.schoolian3"
+        applicationId "com.wikav.student.studentapp"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 4
@@ -50,7 +50,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.msg91.sendotp.library:library:3.1'
     // implementation'com.github.bumptech.glide:glide:4.2.0'
-
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'

@@ -38,6 +38,15 @@
                 android:layout_marginTop="10dp"
             android:id="@+id/st_SubName"
                 android:textAlignment="center"/>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 8 Chapters Completed"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+            android:id="@+id/chapter"
+                android:textAlignment="center"/>
 
         </LinearLayout>
             <LinearLayout
